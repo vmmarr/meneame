@@ -5,21 +5,21 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "usuarios".
+ * This is the model class for table "categorias".
  *
  * @property int $id
  * @property string $nombre
- * @property string $password
- * @property string $email
+ *
+ * @property Noticias[] $noticias
  */
-class Usuarios extends \yii\db\ActiveRecord
+class Categorias extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'usuarios';
+        return 'categorias';
     }
 
     /**
@@ -28,9 +28,9 @@ class Usuarios extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nombre', 'password'], 'required'],
-            [['nombre', 'email'], 'string', 'max' => 255],
-            [['password'], 'string', 'max' => 60],
+            [['nombre'], 'required'],
+            [['nombre'], 'string', 'max' => 255],
+            [['nombre'], 'unique'],
         ];
     }
 
@@ -42,8 +42,8 @@ class Usuarios extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nombre' => 'Nombre',
-            'password' => 'Password',
-            'email' => 'Email',
         ];
     }
+
+
 }

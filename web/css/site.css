@@ -8,6 +8,7 @@ body {
     height: auto;
     margin: 0 auto -60px;
     padding: 0 0 60px;
+    
 }
 
 .wrap > .container {
@@ -98,4 +99,14 @@ a.desc:after {
 .nav > li > form > button.logout:focus,
 .nav > li > form > button.logout:hover {
     background-color: transparent;
+}
+
+.bg-dark {
+    background-color: orangered !important;
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: orangered;
+    border-color: orangered;
 }
